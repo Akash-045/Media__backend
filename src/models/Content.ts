@@ -38,9 +38,9 @@ const ContentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  media: {
+  
   images: [{ ImageSchema }],
   videos: [{ VideoSchema }],
-}});
+});
 
 export default mongoose.model<ContentDocument>("Content", ContentSchema);

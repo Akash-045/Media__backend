@@ -6,6 +6,7 @@
   "author": "Akash <samantray745@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "@types/typescript": "^2.0.0",
     "cors": "^2.8.5",
