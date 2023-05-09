@@ -6,9 +6,10 @@ import { UserDocument } from "../models/User";
 // authorization
 const permissionCheck = async (req: any, res: Response, next: NextFunction) => {
   const userData = req.user as UserDocument;
+  
 
-  const userRoles = userData.permissions;
-  const requestMethod = req.method;
+  const userRoles = userData.permissions;//is array
+  const requestMethod = req.method;//if the user have permisssion or not
 
   const isIncluded = userRoles.some((item) => item.access === requestMethod);
 

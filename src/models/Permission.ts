@@ -7,7 +7,7 @@ export type PermissionDocument = Document & {
 export const PermissionSchema = new mongoose.Schema({
   access: {
     type: String,
-    enum: ["READ", "WRITE", "UPDATE", "DELETE"],
+    enum: ["READ", "WRITE", "UPDATE", "DELETE"],//update and delete are optional so you can delete route
   },
 });
 

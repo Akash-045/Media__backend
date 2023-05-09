@@ -1,6 +1,6 @@
 import mongoose, { Document } from "mongoose";
-import { ImageSchema } from "./Image";
-import { VideoSchema } from "./Video";
+import { ImageDocument, ImageSchema } from "./Image";
+import { VideoDocument, VideoSchema } from "./Video";
 
 export type ContentDocument = Document & {
   title: string;
@@ -9,7 +9,11 @@ export type ContentDocument = Document & {
   originalUrl: string;
   publishDate: string;
   paragraph: string;
-  media: [];
+  //write images and video here
+  //type is an array
+  images:[];
+  videos: [];
+  // media: [];
 };
 
 const ContentSchema = new mongoose.Schema({
@@ -38,7 +42,18 @@ const ContentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  
+  Images: [
+    {
+      type: ImageSchema,
+    },
+  ],
+  Videos: [
+    {
+      type: VideoSchema,
+    },
+  ],
+  //what does it mean ?
+  //array
   images: [{ ImageSchema }],
   videos: [{ VideoSchema }],
 });

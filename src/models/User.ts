@@ -4,7 +4,7 @@ import Permission, { PermissionDocument, PermissionSchema } from "./Permission";
 export type UserDocument = Document & {
   partnerId: string;
   key: string;
-  permissions: PermissionDocument[];
+  permissions: PermissionDocument[];//array of string but database its string(objectid)
 };
 
 export const UserSchema = new mongoose.Schema({
@@ -16,6 +16,7 @@ export const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  //array of id
   permissions: [
     {
       type: mongoose.Schema.Types.ObjectId,
