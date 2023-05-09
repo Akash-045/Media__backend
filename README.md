@@ -1,34 +1,45 @@
-# Media__backend
-Simple Api Backend
+Project Name
 
-This is a simple backend to GET/POST/DELETE Content built using Node.js, Express, and MongoDB.
+Description of the project goes here.
 
-Getting Started
+<strong>Getting Started</strong>
 
-Prerequisites
-To run this project, you will need to have the following software installed:
-
-Node.js v14.17.0 or later
-NPM/Yarn v6.14.13 or later
-MongoDB v4.4.5 or later
-
-Installing
-Clone the repository: 
-git clone https://github.com/Akash-045/Media__backend.git
-
-Install the dependencies:
-Npm/Yarn install
-
-Running the tests
-To run the automated tests, run the following command:
-npm/yarn test
-
-Built With
+<strong>Prerequisites<strong>
 
 Node.js
-Express
 MongoDB
+Installing
+Clone the repository
+Run npm/yarn install to install dependencies
+Running the Application
+Run npm/yarn start to start the server
+Navigate to http://localhost:8000 in your browser.
 
-Acknowledgments
+<strong>Technologies Used</strong>
 
-Thanks to the developers of Node.js, Express, and MongoDB.
+Node.js
+Express.js
+TypeScript
+MongoDB
+Mongoose
+Jest
+Supertest
+
+<strong>Folder Structure</strong>
+
+src/: Contains the source code for the application.
+src/controllers/: Contains the controller functions for handling requests.
+src/models/: Contains the schema definitions for the MongoDB database.
+src/routes/: Contains the route definitions for the API.
+src/utils/: Contains utility functions used throughout the application.
+
+<strong>API Endpoints</strong>
+
+<strong>The following endpoints are available:</strong>
+
+POST /contents: Returns a welcome message.
+GET //:contentId: Returns a list of all users.
+DELETE /:contentId: Returns information for a specific user.
+
+
+
