@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import Image from "../models/Image";
-import Video from "../models/Video";
-import Content,{ContentDocument} from "../models/Content";
+
+import Content from "../models/Content";
 import ContentServices from "../services/content";
 import { BadRequestError } from "../helper/apiError";
 
@@ -10,29 +9,21 @@ export const createContentController = async (
   res: Response,
   next: NextFunction
 ) => {
-  const {
-    title,
-    partnerId,
-    description,
-    originalUrl,
-    publishDate,
-    paragraph,
-    images,
-    videos,
-  } = req.body;
+  const { title, description, originalUrl, publishDate, paragraph, media } = req.body;
   try {
     const newContent = new Content({
-      title,
-      partnerId,
-      description,
-      originalUrl,
-      publishDate,
-      paragraph,
-      images,
-      videos,
+      title: title,
+      partnerId: req.params.partnerId,
+      description: description,
+      originalUrl: originalUrl,
+      publishDate: publishDate,
+      paragraph: paragraph,
+      media: media,
     });
+    
     const content = await ContentServices.createContent(newContent);
-    res.status(201).json(content);
+    // res.json(content).status(201);
+    res.json({contentId: content._id, message: `Content added successful`}).status(201);
   } catch (error) {
     next(new BadRequestError("Invalid Request", error));
   }
@@ -41,14 +32,14 @@ export const createContentController = async (
 export const getContentByIdController = async (
   req: Request,
   res: Response,
-  next: NextFunction
+  // next: NextFunction
 ) => {
   try {
     const content = await ContentServices.getContentById(req.params.contentId);
     res.json(content);
   } catch (error) {
-    next(new BadRequestError("Invalid Request", error));
-  }
+    console.log(error);
+}
 };
 
 export const deleteContentByIdController = async (
@@ -60,8 +51,9 @@ export const deleteContentByIdController = async (
     const content = await ContentServices.deleteContentById(
       req.params.contentId
     );
-    res.status(204);
+    res.json({message: `Content deleted successful`}).status(204);
   } catch (error) {
-    next(new BadRequestError("Invalid Request", error));
+    console.log(error);
+    // next(new BadRequestError("Invalid Request", error));
   }
 };

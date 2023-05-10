@@ -1,13 +1,20 @@
 import mongoose, { Document } from "mongoose";
 
+enum PermissionType {
+  READ = "READ",
+  WRITE = "WRITE"
+}
+
 export type PermissionDocument = Document & {
-  access: string;
+  access: PermissionType | PermissionType[];
 };
 
-export const PermissionSchema = new mongoose.Schema({
+export const PermissionSchema = new mongoose.Schema({  
+
   access: {
-    type: String,
-    enum: ["READ", "WRITE", "UPDATE", "DELETE"],//update and delete are optional so you can delete route
+    type: [String],
+    enum: [PermissionType.READ, PermissionType.WRITE],
+    required: true,
   },
 });
 

@@ -1,5 +1,4 @@
 import Content, { ContentDocument } from "../models/Content";
-import User, { UserDocument } from "../models/User";
 
 const createContent = async (
   content: ContentDocument
@@ -14,11 +13,10 @@ const getContentById = async (
   return contentById;
 };
 
-
 const deleteContentById = async (
   contentId: string
 ): Promise<ContentDocument | null> => {
   const contentById = Content.findByIdAndDelete({ _id: contentId });
-  return contentById;
+  return contentById
 };
 export default { createContent, getContentById, deleteContentById };
