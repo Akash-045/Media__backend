@@ -30,5 +30,8 @@
   "scripts": {
     "start": "nodemon --watch \"src/*\" --ext \"ts,json\" --ignore \"src//.spec.ts\" --exec \"ts-node src/server.ts\"",
     "test": "jest --forceExit --detectOpenHandeles --coverage --verbose false"
+  },
+  "devDependencies": {
+    "mockingoose": "^2.16.2"
   }
 }
