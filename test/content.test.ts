@@ -7,7 +7,7 @@ const mock = jest.spyOn(Content, "create");
 
 describe("test services", () => {
   it("should save the content to database once", async () => {
-    // content doc
+    
     const contentDocument = new Content({
       title: "test",
       partnerId: "1oai9d",
@@ -23,7 +23,6 @@ describe("test services", () => {
 
     const result = await contentServices.createContent(contentDocument);
     expect(result.title).toEqual(contentDocument.title);
-    // Check how many times `Content.create()` was called
     expect(mock).toHaveBeenCalledTimes(1);
   });
 });

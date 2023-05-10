@@ -10,10 +10,11 @@ The Partner Content API is a TypeScript backend project that provides RESTful AP
 4. Step 4: `yarn test` or `npm test` (to run test)
 
 ### API Routes
-
-1.contents/create/:partnerId
-2.contents/view/:contentId
-3.contents/delete/:contentId
+1.users/create
+2.users/login/:partnerId
+3.contents/create/:partnerId
+4.contents/view/:contentId
+5.contents/delete/:contentId
 
 ### Tech stack here
 
