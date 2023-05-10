@@ -1,77 +1,27 @@
-Partner Content API
+# Partner Content API
 
 The Partner Content API is a TypeScript backend project that provides RESTful API routes for partners to create, view, and delete their content. The API routes are authenticated and authorized to ensure that only authorized partners can perform read and write operations on their content.
 
-Requirements
+### Run the project
 
-To run this project, you will need to have Node.js and a database installed on your local machine or server. You can use any database that you are comfortable with. The project is built with Express.js, but you can use any other web framework or tool that you prefer.
+1. Step 1: Clone the repository
+2. Step 2: `npm install` or `yarn` (to install the dependencies )
+3. Step 3: `npm start` or `yarn start` (to start the server )
+4. Step 4: `yarn test` or `npm test` (to run test)
 
-Getting Started
+### API Routes
 
-Clone the repository.
-Install the dependencies by running npm/yarn install.
-Set up your database and configure the connection in the src/config/index.ts file.
-Start the server by running npm/yarn start.
-API Routes
+1.contents/create/:partnerId
+2.contents/view/:contentId
+3.contents/delete/:contentId
 
-The following API routes are available:
+### Tech stack here
 
-Create Content
-POST /api/content
-Creates a new content object and persists it to the database. The content object must have the following properties:
+1.Express.js
 
-interface Content {
-  _id: UUID;
-  title: string;
-  partnerId: UUID;
-  description: string;
-  originalUrl: string;
-  publishDate: string;
-  paragraph: string;
-  media: array; // media can be image or video
-}
+2.TypeScript
 
-The partnerId property is used to verify that the partner has WRITE permission. If the partner only has READ permission, the API will return a 401 Unauthorized error.
-
-Delete Content by ID
-
-DELETE /api/content/:id
-Deletes a content object by ID. The partnerId property is used to verify that the partner has WRITE permission. If the partner only has READ permission, the API will return a 401 Unauthorized error.
-
-
-
-Get Content by ID
-
-GET /api/content/:id
-
-Returns a content object by ID. The partnerId property is used to verify that the partner has READ permission. If the partner does not have READ permission, the API will return a 401 Unauthorized error.
-
-Authentication and Authorization
-
-Partners must be authenticated and authorized to perform read and write operations on their content. The API key, which is stored in the database, is used for authentication. The partnerId property of the content object is used for authorization.
-
-The 'User' and 'Permission' interfaces are used to represent users and their permissions:
-interface User {
-  _id: UUID;
-  partnerId: UUID;
-  key: string;
-}
-
-interface Permission {
-  _id: UUID;
-  partnerId: UUID;
-  access: string; // can be enum and should have READ, WRITE or both
-}
-
-Validation and Error Handling
-
-The controllers are responsible for validating the data that is sent to the API. If the data is invalid, the API will return a 400 Bad Request error.
-
-If an unexpected error occurs, the API will return a 500 Internal Server Error.
-
-Testing
-
-Unit testing is a good practice to ensure the quality of the code. You can run the tests by running 'npm/yarn test'. The tests are located in the 'src/test' directory.
+3.Mongodb
 
 Conclusion
 

@@ -9,7 +9,8 @@ export const createContentController = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { title, description, originalUrl, publishDate, paragraph, media } = req.body;
+  const { title, description, originalUrl, publishDate, paragraph, media } =
+    req.body;
   try {
     const newContent = new Content({
       title: title,
@@ -20,10 +21,12 @@ export const createContentController = async (
       paragraph: paragraph,
       media: media,
     });
-    
+
     const content = await ContentServices.createContent(newContent);
-    // res.json(content).status(201);
-    res.json({contentId: content._id, message: `Content added successful`}).status(201);
+
+    res
+      .json({ contentId: content._id, message: `Content added successful` })
+      .status(201);
   } catch (error) {
     next(new BadRequestError("Invalid Request", error));
   }
@@ -31,7 +34,7 @@ export const createContentController = async (
 
 export const getContentByIdController = async (
   req: Request,
-  res: Response,
+  res: Response
   // next: NextFunction
 ) => {
   try {
@@ -39,7 +42,7 @@ export const getContentByIdController = async (
     res.json(content);
   } catch (error) {
     console.log(error);
-}
+  }
 };
 
 export const deleteContentByIdController = async (
@@ -51,9 +54,9 @@ export const deleteContentByIdController = async (
     const content = await ContentServices.deleteContentById(
       req.params.contentId
     );
-    res.json({message: `Content deleted successful`}).status(204);
+    res.json({ message: `Content deleted successful` }).status(204);
   } catch (error) {
     console.log(error);
-    // next(new BadRequestError("Invalid Request", error));
+    
   }
 };

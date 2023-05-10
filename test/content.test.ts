@@ -1,7 +1,3 @@
-// unit test
-// mock database
-// install: yarn add mockingoose -D
-// link: https://www.npmjs.com/package/mockingoose
 
 import { describe, jest, it, expect } from "@jest/globals";
 import Content from "../src/models/Content";

@@ -13,11 +13,5 @@ const findUserById = async (
     return foundUser;
 }
 
-// const findPartnerById = async (
-//     partnerId: string
-// ): Promise<UserDocument | null> => {
-//     const foundUser = User.findOne({partnerId: partnerId});
-//     return foundUser;
-// }
 
 export default { createUser, findUserById };
