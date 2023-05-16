@@ -17,3 +17,11 @@ router.get("/view/:contentId", passport.authenticate("jwt", {session: false}), p
 router.delete("/delete/:contentId", passport.authenticate("jwt", {session: false}), permissionCheckWrite, deleteContentByIdController);
 
 export default router;
+
+/*const router = Router();
+
+router.post("/", permissionCheck, createContentController);
+router.get("/:contentId", permissionCheck, getContentByIdController);
+router.delete("/:contentId", permissionCheck, deleteContentByIdController);
+
+export default router;*/
