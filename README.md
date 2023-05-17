@@ -16,15 +16,25 @@ The Partner Content API is a TypeScript backend project that provides RESTful AP
 
 ### API Routes
 
-list 3 routers here
+1.POST:http://localhost:8000/contents/create/:partnerId
+
+2.GET:http://localhost:8000/contents/view/:contentId
+
+3.DELETE:http://localhost:8000/contents/delete/:contentId
+
+4.POST:http://localhost:8000/users/create
+
+5.POST:http://localhost:8000/users/login/:partnerId
 
 ### Tech stack here
 
-1.
+1.Express.js
 
-2.
+2.Mongodb
 
-3.
+3.Node.js
+
+4.TypeScript
 
 Conclusion
 

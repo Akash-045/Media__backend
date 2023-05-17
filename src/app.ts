@@ -8,7 +8,6 @@ import apiErrorHandler from "./middleware/apiErrorHandeler";
 import passport from "passport";
 import { jwtStrategy } from "./config/passport";
 
-
 const app = Express();
 
 app.use(Express.json());

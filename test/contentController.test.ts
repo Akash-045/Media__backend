@@ -1,9 +1,6 @@
-
 import ContentServices from "../src/services/content";
 
 import { createContentController } from "./../src/controllers/content";
-
-
 
 describe("content controller", () => {
   it("should create new content", async () => {
@@ -18,10 +15,8 @@ describe("content controller", () => {
         partnerId: "1oai9d",
         description: "test",
         originalUrl: "test",
-        publishDate: "test",
         paragraph: "test",
-        images: [],
-        videos: [],
+        media: ["READ"],
       },
     };
     const service = jest

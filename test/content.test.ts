@@ -1,9 +1,6 @@
-
 import { describe, jest, it, expect } from "@jest/globals";
 import Content from "../src/models/Content";
 import contentServices from "../src/services/content";
-
-
 
 describe("test services ", () => {
   it("should save the content to database once", async () => {
@@ -12,11 +9,9 @@ describe("test services ", () => {
       partnerId: "1oai9d",
       description: "test",
       originalUrl: "test",
-      publishDate: "test",
       paragraph: "test",
-      images: [],
-      videos: [],
-    });
+      media: "READ",
+    }); //media:[]
 
     const mock = jest
       .spyOn(Content, "create")

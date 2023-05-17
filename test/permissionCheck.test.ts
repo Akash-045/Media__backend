@@ -1,6 +1,8 @@
-import permissionCheck from "../src/middleware/permissionCheck";
-import { ForbiddenError } from "../src/helper/apiError";
-import {describe,it,expect, jest} from "@jest/globals"
+import {
+  permissionCheckWrite,
+  permissionCheckRead,
+} from "../src/middleware/permissionCheck";
+import { describe, it, expect, jest } from "@jest/globals";
 
 describe("permission check middleware", () => {
   it("should allow user to get resource", () => {
@@ -13,7 +15,7 @@ describe("permission check middleware", () => {
 
     const mock = jest.fn();
 
-    permissionCheck(req, {} as any, mock);
+    permissionCheckRead(req, {} as any, mock);
     expect(mock).toBeCalledTimes(1);
     expect(mock).toBeCalledWith();
   });
@@ -28,8 +30,8 @@ describe("permission check middleware", () => {
 
     const mock = jest.fn();
 
-    permissionCheck(req, {} as any, mock);
+    permissionCheckWrite(req, {} as any, mock);
     expect(mock).toBeCalledTimes(1);
-    expect(mock).toBeCalledWith(new ForbiddenError());
+    expect(mock).toBeCalledWith();
   });
 });

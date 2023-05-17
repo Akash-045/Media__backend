@@ -9,7 +9,7 @@ export type ContentDocument = Document & {
   originalUrl: string;
   publishDate: string;
   paragraph: string;
-  media: (ImageDocument | VideoDocument)[]; 
+  media: (ImageDocument | VideoDocument)[];
 };
 
 const ContentSchema = new mongoose.Schema({
@@ -32,6 +32,8 @@ const ContentSchema = new mongoose.Schema({
   publishDate: {
     type: Date,
     default: Date.now,
+    //type: String,
+    //required: true,
   },
   paragraph: {
     type: String,
@@ -40,9 +42,8 @@ const ContentSchema = new mongoose.Schema({
 
   media: {
     type: Array,
-    required: true
-  }
+    required: true,
+  },
 });
 
 export default mongoose.model<ContentDocument>("Content", ContentSchema);
-
