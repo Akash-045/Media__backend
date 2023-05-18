@@ -14,17 +14,21 @@ The Partner Content API is a TypeScript backend project that provides RESTful AP
 5. Step 3: `yarn start` (to start the server )
 6. Step 4: `yarn test` (to run test)
 
-### API Routes
+### Deploy Link
 
-1.POST:http://localhost:8000/contents/create/:partnerId
+1.https://media-backend-hma7.onrender.com
 
-2.GET:http://localhost:8000/contents/view/:contentId
+### Demo API Routes
 
-3.DELETE:http://localhost:8000/contents/delete/:contentId
+1.POST:https://media-backend-hma7.onrender.com/contents/create/:partnerId
 
-4.POST:http://localhost:8000/users/create
+2.GET:https://media-backend-hma7.onrender.com/contents/view/:contentId
 
-5.POST:http://localhost:8000/users/login/:partnerId
+3.DELETE:https://media-backend-hma7.onrender.com/contents/delete/:contentId
+
+4.POST:https://media-backend-hma7.onrender.com/users/create
+
+5.POST:https://media-backend-hma7.onrender.com/users/login/:partnerId
 
 ### Tech stack here
 
