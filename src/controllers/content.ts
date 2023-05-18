@@ -39,14 +39,14 @@ export const createContentController = async (
 
 export const getContentByIdController = async (
   req: Request,
-  res: Response
-  // next: NextFunction
+  res: Response,
+   next: NextFunction
 ) => {
   try {
     const content = await ContentServices.getContentById(req.params.contentId);
     res.json(content);
   } catch (error) {
-    console.log(error);
+    next(new BadRequestError("Invalid Request", error));;
   }
 };
 
@@ -61,6 +61,6 @@ export const deleteContentByIdController = async (
     );
     res.json({ message: `Content deleted successful` }).status(204);
   } catch (error) {
-    console.log(error);
+    next(new BadRequestError("Invalid Request", error));;
   }
 };
