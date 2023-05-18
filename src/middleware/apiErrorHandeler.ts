@@ -2,7 +2,6 @@ import { NextFunction, Request, Response } from "express";
 
 import ApiError from "../helper/apiError";
 
-
 export default function errorHandler(
   error: ApiError,
   req: Request,
@@ -10,7 +9,7 @@ export default function errorHandler(
   next: NextFunction
 ) {
   res.status(error.statusCode).json({
-    status: 'error',
+    status: "error",
     statusCode: error.statusCode,
     message: error.message,
   });

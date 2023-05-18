@@ -107,7 +107,8 @@
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -150,59 +151,61 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default class ApiError extends Error {
-<span class="fstat-no" title="function not covered" >    constructor(</span>
-      readonly <span class="cstat-no" title="statement not covered" >statusCode: number,</span>
-      readonly <span class="cstat-no" title="statement not covered" >message: string,</span>
-      readonly <span class="cstat-no" title="statement not covered" >source?: Error</span>
-    ) {
-<span class="cstat-no" title="statement not covered" >      super();</span>
-    }
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    readonly <span class="cstat-no" title="statement not covered" >statusCode: number,</span>
+    readonly <span class="cstat-no" title="statement not covered" >message: string,</span>
+    readonly <span class="cstat-no" title="statement not covered" >source?: Error</span>
+  ) {
+<span class="cstat-no" title="statement not covered" >    super();</span>
   }
-  
-  export class NotFoundError extends ApiError {
-<span class="fstat-no" title="function not covered" >    constructor(readonly <span class="cstat-no" title="statement not covered" >m</span>essage: string = <span class="branch-0 cbranch-no" title="branch not covered" >"</span>Not Found",</span> source?: Error | any) {
-<span class="cstat-no" title="statement not covered" >      super(404, message, source);</span>
-    }
+}
+&nbsp;
+export class NotFoundError extends ApiError {
+<span class="fstat-no" title="function not covered" >  constructor(readonly <span class="cstat-no" title="statement not covered" >m</span>essage: string = <span class="branch-0 cbranch-no" title="branch not covered" >"</span>Not Found",</span> source?: Error | any) {
+<span class="cstat-no" title="statement not covered" >    super(404, message, source);</span>
   }
-  
-  export class ForbiddenError extends ApiError {
-<span class="fstat-no" title="function not covered" >    constructor(readonly <span class="cstat-no" title="statement not covered" >m</span>essage: string = <span class="branch-0 cbranch-no" title="branch not covered" >"</span>Forbidden",</span> source?: Error | any) {
-<span class="cstat-no" title="statement not covered" >      super(403, message, source);</span>
-    }
+}
+&nbsp;
+export class ForbiddenError extends ApiError {
+<span class="fstat-no" title="function not covered" >  constructor(readonly <span class="cstat-no" title="statement not covered" >m</span>essage: string = <span class="branch-0 cbranch-no" title="branch not covered" >"</span>Forbidden",</span> source?: Error | any) {
+<span class="cstat-no" title="statement not covered" >    super(403, message, source);</span>
   }
-  
-  export class InternalServerError extends ApiError {
-<span class="fstat-no" title="function not covered" >    constructor(</span>
-      readonly <span class="cstat-no" title="statement not covered" >message: string = <span class="branch-0 cbranch-no" title="branch not covered" >"</span>Internal Server Error",</span>
-      source?: Error | any
-    ) {
-<span class="cstat-no" title="statement not covered" >      super(500, message, source);</span>
-    }
+}
+&nbsp;
+export class InternalServerError extends ApiError {
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    readonly <span class="cstat-no" title="statement not covered" >message: string = <span class="branch-0 cbranch-no" title="branch not covered" >"</span>Internal Server Error",</span>
+    source?: Error | any
+  ) {
+<span class="cstat-no" title="statement not covered" >    super(500, message, source);</span>
   }
-  
-  export class UnauthorizedError extends ApiError {
-<span class="fstat-no" title="function not covered" >    constructor(</span>
-      readonly <span class="cstat-no" title="statement not covered" >message: string = <span class="branch-0 cbranch-no" title="branch not covered" >"</span>Unauthorized Request",</span>
-      source?: Error | any
-    ) {
-<span class="cstat-no" title="statement not covered" >      super(401, message, source);</span>
-    }
+}
+&nbsp;
+export class UnauthorizedError extends ApiError {
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    readonly <span class="cstat-no" title="statement not covered" >message: string = <span class="branch-0 cbranch-no" title="branch not covered" >"</span>Unauthorized Request",</span>
+    source?: Error | any
+  ) {
+<span class="cstat-no" title="statement not covered" >    super(401, message, source);</span>
   }
-  
-  export class BadRequestError extends ApiError {
-<span class="fstat-no" title="function not covered" >    constructor(readonly <span class="cstat-no" title="statement not covered" >m</span>essage: string = <span class="branch-0 cbranch-no" title="branch not covered" >"</span>Bad Request",</span> source?: Error | any) {
-<span class="cstat-no" title="statement not covered" >      super(400, message, source);</span>
-    }
-  }</pre></td></tr></table></pre>
+}
+&nbsp;
+export class BadRequestError extends ApiError {
+<span class="fstat-no" title="function not covered" >  constructor(readonly <span class="cstat-no" title="statement not covered" >m</span>essage: string = <span class="branch-0 cbranch-no" title="branch not covered" >"</span>Bad Request",</span> source?: Error | any) {
+<span class="cstat-no" title="statement not covered" >    super(400, message, source);</span>
+  }
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-17T11:07:46.372Z
+                at 2023-05-18T10:11:15.351Z
             </div>
         <script src="../prettify.js"></script>
         <script>

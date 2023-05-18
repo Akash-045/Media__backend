@@ -30,6 +30,8 @@ The Partner Content API is a TypeScript backend project that provides RESTful AP
 
 5.POST:https://media-backend-hma7.onrender.com/users/login/:partnerId
 
+NOTE:(contentId is _id from MongoDB)
+
 ### Tech stack here
 
 1.Express.js
