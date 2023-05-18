@@ -6,7 +6,7 @@
   "author": "Akash <samantray745@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=14 <15"
+    "node": ">=15"
   },
   "dependencies": {
     "@jest/globals": "^29.5.0",
