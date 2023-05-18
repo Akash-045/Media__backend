@@ -11,8 +11,8 @@
       "outDir": "dist",
       "baseUrl": ".",
       "paths": {
-        "*": ["node_modules/*", "src/types/*"]
+        "*": ["node_modules/*", "API/src/types/*"]
       }
     },
-    "include": ["src/**/*"]
+    "include": ["API/src/**/*"]
   }
