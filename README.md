@@ -9,9 +9,9 @@ The Partner Content API is a TypeScript backend project that provides RESTful AP
 2. Step 2: `docker build . -t name-of-project`
 3. Step 3: `docker run -p 8001:8000 -d name-of-project`
    (make sure no project is running on port 8001)
-   NOTE:PLEASE WRITE THESE COMMANDS BEFORE YARN 
-   (a) export JWT_SECRET=asasaasasdad  
-   (b) export MONGODB_URL="mongodb+srv://akashhritik:Akashyo123@cluster0.asoir0t.mongodb.net/?retryWrites=true&w=majority"
+   <br> NOTE:PLEASE WRITE THESE COMMANDS BEFORE YARN </br>
+   <br> (a) export JWT_SECRET=asasaasasdad </br>
+   <br> (b) export MONGODB_URL="mongodb+srv://akashhritik:Akashyo123@cluster0.asoir0t.mongodb.net/?retryWrites=true&w=majority"</br>
 
 4. Step 1: `yarn ` (to install the dependencies )
 5. Step 2: `yarn start` (to start the server )
